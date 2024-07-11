@@ -25,7 +25,7 @@ public class CreditCard {
     private Customer customer;
 
     @Column(nullable = false)
-    private Double limit;
+    private Double limit_amount;
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
