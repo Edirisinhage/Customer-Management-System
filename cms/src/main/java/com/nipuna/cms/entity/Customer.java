@@ -6,6 +6,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.lang.model.element.NestingKind;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -18,8 +19,8 @@ import java.util.List;
 public class Customer {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long customer_id;
+    @Column(unique = true)
+    private String customer_id;
 
     @Column(nullable = false)
     private String fullname;
@@ -38,10 +39,10 @@ public class Customer {
 
     private String address;
 
-    @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "customer")
     private List<Account> accounts;
 
-    @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToOne
     @JoinColumn(name = "card_no")
     private CreditCard creditCard;
 
