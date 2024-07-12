@@ -15,15 +15,16 @@ import java.time.LocalDate;
 @Entity
 @Table(name = "account")
 public class Account {
+
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(nullable = false,unique = true)
     private long account_no;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "customer_id",nullable = false)
     private Customer customer;
 
-    @Column(nullable = false)
+    @Column(nullable = false,updatable = false)
     private LocalDate create_date;
 
     @Column(nullable = false)
