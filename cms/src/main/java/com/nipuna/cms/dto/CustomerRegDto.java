@@ -21,6 +21,7 @@ import java.util.List;
 public class CustomerRegDto {
 
     @NotNull(message = "National id is required")
+    @Size(max = 10,min = 10,message = "Id must be 10 digit")
     private String customer_id;
 
     @NotNull(message = "Full name cannot be null")

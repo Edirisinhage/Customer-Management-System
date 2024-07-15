@@ -1,13 +1,15 @@
 package com.nipuna.cms.service;
 
 import com.fasterxml.jackson.databind.exc.InvalidTypeIdException;
+import com.nipuna.cms.dto.CardDetailDto;
 import com.nipuna.cms.dto.CustomerRegDto;
 import com.nipuna.cms.entity.Account;
+import com.nipuna.cms.entity.CreditCard;
 import com.nipuna.cms.entity.Customer;
-import com.nipuna.cms.exception.BalanceNotEnoughException;
-import com.nipuna.cms.exception.ExistCustomerException;
+import com.nipuna.cms.exception.*;
 import com.nipuna.cms.mapper.RegMapper;
 import com.nipuna.cms.repository.AccountRepository;
+import com.nipuna.cms.repository.CreditCardRepository;
 import com.nipuna.cms.repository.CustomerRepository;
 import com.sun.jdi.InvalidTypeException;
 import jakarta.transaction.Transactional;
@@ -19,6 +21,7 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import java.sql.SQLDataException;
 import java.sql.SQLException;
 import java.sql.SQLIntegrityConstraintViolationException;
+import java.util.Optional;
 
 @Data
 @Service
@@ -29,10 +32,12 @@ public class CustomerService implements CustomerSerRepo{
     private final CustomerRepository customerRepository;
 
     private final AccountRepository accountRepository;
+
+    private final CreditCardRepository creditCardRepository;
     @Override
     @Transactional
     public Customer registerCustomer(CustomerRegDto customerRegDto) throws BalanceNotEnoughException, ExistCustomerException, InvalidTypeException {
-        if(customerRepository.existsById(customerRegDto.getCustomer_id())){
+        if(!customerRepository.existsById(customerRegDto.getCustomer_id())){
             if(customerRegDto.getBalance()>=1500){
                 Customer customer =customerRepository.save(mapper.RegToCustomer(customerRegDto));
                 if(customer!=null){
@@ -47,5 +52,20 @@ public class CustomerService implements CustomerSerRepo{
             throw new ExistCustomerException("Checked:Customer is already registered");
         }
 
+    }
+
+    @Override
+    public String createCard(CardDetailDto cardDetailDto) throws InvalidCardTypeException, CustomerNotRegisteredException, AlreadyHaveCardException {
+        if(customerRepository.existsById(cardDetailDto.getCustomer_id())){
+            if(creditCardRepository.findByCustomer(customerRepository.findById(cardDetailDto.getCustomer_id()).get()).isPresent()){
+                Customer customer=customerRepository.findById(cardDetailDto.getCustomer_id()).get();
+                CreditCard creditCard=creditCardRepository.save(mapper.cardReqDtoToCard(cardDetailDto,customer));
+                return "Successfully activated the credi card";
+            }else{
+                throw new AlreadyHaveCardException("Already you have a activated credit card.Cannot activate another");
+            }
+
+        }
+        throw new CustomerNotRegisteredException("You are not registered");
     }
 }

@@ -74,7 +74,7 @@ public class GloobalExceptionHandler {
 
         CustomRegResponseDto errorResponse=CustomRegResponseDto.builder()
                 .status("Failed")
-                .message("Registration Failed")
+                .message("Data integrity violation")
                 .object(exception.getMessage())
                 .build();
 
@@ -88,6 +88,45 @@ public class GloobalExceptionHandler {
         CustomRegResponseDto errorResponse=CustomRegResponseDto.builder()
                 .status("Failed")
                 .message("Registration Failed")
+                .object(exception.getMessage())
+                .build();
+
+        return ResponseEntity.ok(errorResponse);
+    }
+
+    @ExceptionHandler(InvalidCardTypeException.class)
+    public ResponseEntity<CustomRegResponseDto> existCustomerException(InvalidCardTypeException exception){
+
+
+        CustomRegResponseDto errorResponse=CustomRegResponseDto.builder()
+                .status("Failed")
+                .message("Card Activation Failed")
+                .object(exception.getMessage())
+                .build();
+
+        return ResponseEntity.ok(errorResponse);
+    }
+
+    @ExceptionHandler(CustomerNotRegisteredException.class)
+    public ResponseEntity<CustomRegResponseDto> existCustomerException(CustomerNotRegisteredException exception){
+
+
+        CustomRegResponseDto errorResponse=CustomRegResponseDto.builder()
+                .status("Failed")
+                .message("Card Activation Failed")
+                .object(exception.getMessage())
+                .build();
+
+        return ResponseEntity.ok(errorResponse);
+    }
+
+    @ExceptionHandler(AlreadyHaveCardException.class)
+    public ResponseEntity<CustomRegResponseDto> existCustomerException(AlreadyHaveCardException exception){
+
+
+        CustomRegResponseDto errorResponse=CustomRegResponseDto.builder()
+                .status("Failed")
+                .message("Card Activation Failed")
                 .object(exception.getMessage())
                 .build();
 
