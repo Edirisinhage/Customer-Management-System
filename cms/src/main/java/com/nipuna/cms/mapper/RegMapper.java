@@ -3,6 +3,7 @@ package com.nipuna.cms.mapper;
 import com.fasterxml.jackson.databind.exc.InvalidTypeIdException;
 import com.fasterxml.jackson.databind.exc.MismatchedInputException;
 import com.nipuna.cms.dto.CardDetailDto;
+import com.nipuna.cms.dto.CreateAccountDto;
 import com.nipuna.cms.dto.CustomerRegDto;
 import com.nipuna.cms.entity.*;
 import com.nipuna.cms.exception.InvalidCardTypeException;
@@ -32,16 +33,22 @@ public class RegMapper {
         customer.setFullname(customerRegDto.getFullname());
         customer.setUsername(customerRegDto.getUsername());
         customer.setPassword(encoder(customerRegDto.getPassword()));
-        if(customerRegDto.getCustomer_type().equals(CustomerType.INDIVIDUAL)){
+        if(customerRegDto.getCustomer_type().equals("INDIVIDUAL")){
             customer.setCustomer_type(CustomerType.INDIVIDUAL);
-        }else if(customerRegDto.getCustomer_type().equals(CustomerType.BUISNESS)){
+        }else if(customerRegDto.getCustomer_type().equals("BUISNESS")){
             customer.setCustomer_type(CustomerType.BUISNESS);
         }else{
             throw new InvalidTypeException("Invalid Type of Customer");
         }
 
-        if(customerRegDto.getRole().equals(Role.USER)){
+        if(customerRegDto.getRole().equals("USER")){
             customer.setRole(Role.USER);
+        }else if(customerRegDto.getRole().equals("ADMIN")){
+            customer.setRole(Role.ADMIN);
+        }else if(customerRegDto.getRole().equals("MANAGER")){
+            customer.setRole(Role.MANAGER);
+        }else if(customerRegDto.getRole().equals("LOAN_OFFICER")){
+            customer.setRole(Role.LOAN_OFFICER);
         }else{
             throw new InvalidTypeException("Invalid Role");
         }
@@ -49,7 +56,6 @@ public class RegMapper {
         customer.setAddress(customerRegDto.getAddress());
         customer.setDate_of_birth(customerRegDto.getDate_of_birth());
         customer.setContact_no(customerRegDto.getContact_no());
-        customer.setRole(Role.USER);
 
         return customer;
     }
@@ -62,9 +68,9 @@ public class RegMapper {
 
     public Account RedDtoToAccount(CustomerRegDto customerRegDto,Customer customer) throws InvalidTypeException {
        Account account=new Account();
-       if(customerRegDto.getAccountType().equals(AccountType.SAVING)){
+       if(customerRegDto.getAccountType().equals("SAVING")){
            account.setAccountType(AccountType.SAVING);
-       } else if (customerRegDto.getAccountType().equals(AccountType.CHECKING)) {
+       } else if (customerRegDto.getAccountType().equals("CHECKING")) {
            account.setAccountType(AccountType.CHECKING);
        }else{
             throw new InvalidTypeException("Invalid Type of Account type");
@@ -79,9 +85,9 @@ public class RegMapper {
     public CreditCard cardReqDtoToCard(CardDetailDto cardDetailDto,Customer customer) throws InvalidCardTypeException {
         CreditCard creditCard=new CreditCard();
         creditCard.setCard_no((long) (Math.random()*Math.pow(16,16)));
-        if(cardDetailDto.getCardType().equals(CardType.Visa)){
+        if(cardDetailDto.getCardType().equals("Visa")){
             creditCard.setCardType(CardType.Visa);
-        }else if(cardDetailDto.getCardType().equals(CardType.MasterCard)){
+        }else if(cardDetailDto.getCardType().equals("MasterCard")){
             creditCard.setCardType(CardType.MasterCard);
         }else{
             throw new InvalidCardTypeException("You have entered invalid type of card");
@@ -91,5 +97,21 @@ public class RegMapper {
         creditCard.setExpire_date(LocalDate.now().plus(10, ChronoUnit.YEARS));
         creditCard.setCustomer(customer);
         return creditCard;
+    }
+
+    public Account createAccountDtoToAccount(CreateAccountDto createAccountDto,Customer customer) throws InvalidTypeException {
+        Account account=new Account();
+        if(createAccountDto.getAccountType().equals("SAVING")){
+            account.setAccountType(AccountType.SAVING);
+        } else if (createAccountDto.getAccountType().equals("CHECKING")) {
+            account.setAccountType(AccountType.CHECKING);
+        }else{
+            throw new InvalidTypeException("Invalid Type of Account type");
+        }
+        account.setAccount_no((long) (Math.random()*Math.pow(10,10)));
+        account.setBalance(createAccountDto.getDeposit_amount());
+        account.setCustomer(customer);
+        account.setCreate_date(LocalDate.now());
+        return account;
     }
 }

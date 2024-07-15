@@ -1,0 +1,5 @@
+
+˜	java:S116"VRename this field "customer_id" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ëÒÄÀ8Ú¼Â¦‹2J$2cc2b9eb-c41a-48be-8104-f7904d4c4521
+ 	java:S116"YRename this field "deposit_amount" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(îÀ˜úÿÿÿÿ8Ú¼Â¦‹2J$c1e30887-6e0e-42ad-a03c-f51f5bae4fbd
+
+java:S1128">Remove this unused import 'com.nipuna.cms.entity.AccountType'.(ÑÉòĞ8İ¼Â¦‹2J$a1efddc6-2c00-4997-86a8-81692ca133e8

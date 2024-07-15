@@ -1,9 +1,28 @@
 
 ¡
-java:S1488;"_Immediately return this expression instead of assigning it to the temporary variable "encoded".(‹÷”8÷¦Ş´Š2J$b46beb13-2d6b-4f3e-9e0a-9e3a5150d207
-•	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Š™ïÓÿÿÿÿÿ8„§Ş´Š2J$e3ee4fc7-fdc6-4eea-9fc1-c36d6cedec0b
-	java:S100?"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‘¨“¾8‰§Ş´Š2J$0fa98b81-32fb-46ed-bc17-da24a3e04a38
+java:S1488A"_Immediately return this expression instead of assigning it to the temporary variable "encoded".(‹÷”8ÙîÕ¨‹2J$48d45287-b1d9-4659-9023-3a650d4fa095
+•	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Š™ïÓÿÿÿÿÿ8ïîÕ¨‹2J$101afe0c-3eee-4a22-935f-4aff3831d305
+	java:S100E"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‘¨“¾8öîÕ¨‹2J$c680f128-e60b-4379-939c-a3a5e109e97a
 r
-java:S2140H"*Use "java.util.Random.nextLong()" instead.(±¡ÜÕÿÿÿÿÿ8Š§Ş´Š2J$6a298738-c173-4b45-b037-9c66ec19385b
+java:S2140N"*Use "java.util.Random.nextLong()" instead.(±¡ÜÕÿÿÿÿÿ8ùîÕ¨‹2J$a6839277-157b-4b4a-9cc3-69dedf3afafa
 m
-java:S2140Q"*Use "java.util.Random.nextLong()" instead.(´èøğ8§Ş´Š2J$7cec6ca1-f39c-4fee-acaf-3e081f586d06
+java:S2140W"*Use "java.util.Random.nextLong()" instead.(´èøğ8ûîÕ¨‹2J$6b042494-8abd-4e55-a561-542484ec0991
+r
+java:S2140o"*Use "java.util.Random.nextLong()" instead.(±¡ÜÕÿÿÿÿÿ8şîÕ¨‹2J$4c6957ca-0957-4305-8387-9d7446a521ff
+™
+java:S1128"VRemove this unused import 'com.fasterxml.jackson.databind.exc.InvalidTypeIdException'.(œ½Ûµ8ßÙÁ©‹2J$f4664f17-5b59-4fe3-a973-9113233439c5
+ 
+java:S1128"XRemove this unused import 'com.fasterxml.jackson.databind.exc.MismatchedInputException'.(íÉÎüÿÿÿÿÿ8ßÙÁ©‹2J$2ff457f2-01b4-49d6-b8b5-74b0e93e57cd
+‘
+java:S1128
+"IRemove this unused import 'com.nipuna.cms.repository.CustomerRepository'.(ÉÍãÓüÿÿÿÿ8ßÙÁ©‹2J$b43aac0c-65d3-48c4-9224-6b34c8f5c0ea
+ƒ
+java:S1128";Remove this unused import 'lombok.RequiredArgsConstructor'.(ÑØúøÿÿÿÿ8ßÙÁ©‹2J$81d624c7-4439-4d08-8377-6aad4db50059
+¡
+java:S1128"YRemove this unused import 'org.springframework.web.bind.MethodArgumentNotValidException'.(Ñîœ¥ÿÿÿÿÿ8ßÙÁ©‹2J$d925dfc5-e184-4973-9878-605179a68e40
+w
+java:S1128"/Remove this unused import 'java.beans.Encoder'.(ÿ¼õ‹ûÿÿÿÿ8ßÙÁ©‹2J$fdf836c3-2026-4090-8817-a5480fe266df
+~
+java:S1128"6Remove this unused import 'java.sql.SQLDataException'.(€Õ¢úÿÿÿÿ8ßÙÁ©‹2J$3894f223-6ffe-4db1-8605-b72e17929155
+u
+java:S1128"2Remove this unused import 'java.sql.SQLException'.(ÛïÆŸ8ßÙÁ©‹2J$c3748b97-5863-4c23-92db-e4d3240fed65

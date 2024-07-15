@@ -2,6 +2,7 @@ package com.nipuna.cms.service;
 
 import com.fasterxml.jackson.databind.exc.InvalidTypeIdException;
 import com.nipuna.cms.dto.CardDetailDto;
+import com.nipuna.cms.dto.CreateAccountDto;
 import com.nipuna.cms.dto.CustomerRegDto;
 import com.nipuna.cms.entity.Account;
 import com.nipuna.cms.entity.CreditCard;
@@ -57,7 +58,7 @@ public class CustomerService implements CustomerSerRepo{
     @Override
     public String createCard(CardDetailDto cardDetailDto) throws InvalidCardTypeException, CustomerNotRegisteredException, AlreadyHaveCardException {
         if(customerRepository.existsById(cardDetailDto.getCustomer_id())){
-            if(creditCardRepository.findByCustomer(customerRepository.findById(cardDetailDto.getCustomer_id()).get()).isPresent()){
+            if(!creditCardRepository.findByCustomer(customerRepository.findById(cardDetailDto.getCustomer_id()).get()).isPresent()){
                 Customer customer=customerRepository.findById(cardDetailDto.getCustomer_id()).get();
                 CreditCard creditCard=creditCardRepository.save(mapper.cardReqDtoToCard(cardDetailDto,customer));
                 return "Successfully activated the credi card";
@@ -67,5 +68,16 @@ public class CustomerService implements CustomerSerRepo{
 
         }
         throw new CustomerNotRegisteredException("You are not registered");
+    }
+
+    @Override
+    public String createAccount(CreateAccountDto createAccountDto) throws CustomerNotRegisteredException, InvalidTypeException {
+       if(customerRepository.existsById(createAccountDto.getCustomer_id())){
+           Customer customer=customerRepository.findById(createAccountDto.getCustomer_id()).get();
+           accountRepository.save(mapper.createAccountDtoToAccount(createAccountDto,customer));
+          return "You have successfully created an account";
+       }else{
+           throw new CustomerNotRegisteredException("You have not Registered still");
+       }
     }
 }
