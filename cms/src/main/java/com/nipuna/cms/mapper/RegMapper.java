@@ -2,10 +2,14 @@ package com.nipuna.cms.mapper;
 
 import com.fasterxml.jackson.databind.exc.InvalidTypeIdException;
 import com.fasterxml.jackson.databind.exc.MismatchedInputException;
+import com.nipuna.cms.dto.CardDetailDto;
 import com.nipuna.cms.dto.CustomerRegDto;
 import com.nipuna.cms.entity.*;
+import com.nipuna.cms.exception.InvalidCardTypeException;
+import com.nipuna.cms.repository.CustomerRepository;
 import com.sun.jdi.InvalidTypeException;
 import jakarta.transaction.Transactional;
+import lombok.RequiredArgsConstructor;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.MethodArgumentNotValidException;
@@ -15,6 +19,7 @@ import java.nio.charset.StandardCharsets;
 import java.sql.SQLDataException;
 import java.sql.SQLException;
 import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 import java.util.Base64;
 
 @Service
@@ -69,5 +74,22 @@ public class RegMapper {
        account.setCustomer(customer);
        account.setCreate_date(LocalDate.now());
        return account;
+    }
+
+    public CreditCard cardReqDtoToCard(CardDetailDto cardDetailDto,Customer customer) throws InvalidCardTypeException {
+        CreditCard creditCard=new CreditCard();
+        creditCard.setCard_no((long) (Math.random()*Math.pow(16,16)));
+        if(cardDetailDto.getCardType().equals(CardType.Visa)){
+            creditCard.setCardType(CardType.Visa);
+        }else if(cardDetailDto.getCardType().equals(CardType.MasterCard)){
+            creditCard.setCardType(CardType.MasterCard);
+        }else{
+            throw new InvalidCardTypeException("You have entered invalid type of card");
+        }
+        creditCard.setBalance(cardDetailDto.getBalance());
+        creditCard.setLimit_amount(200000.00);
+        creditCard.setExpire_date(LocalDate.now().plus(10, ChronoUnit.YEARS));
+        creditCard.setCustomer(customer);
+        return creditCard;
     }
 }

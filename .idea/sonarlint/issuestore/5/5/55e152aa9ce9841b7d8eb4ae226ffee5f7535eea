@@ -1,0 +1,12 @@
+
+Ÿ
+java:S1192g"WDefine a constant instead of duplicating this literal "Card Activation Failed" 3 times.(–àäˆüÿÿÿÿ8”ÃÜ¤‹2J$73913b26-fbf8-4a33-9e32-909d42972647
+œ
+java:S1192"TDefine a constant instead of duplicating this literal "Registration Failed" 5 times.(Æ±Üşÿÿÿÿ8é¢ñ´Š2J$f3a80263-6aa9-4720-a4f9-b8cb3f8a7b20
+‰
+java:S1192"GDefine a constant instead of duplicating this literal "Failed" 9 times.(¢Íïe8ê¢ñ´Š2J$d653f21a-3ed6-41d7-b29d-9c7087c4b8fa
+½
+java:S6204<"zReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()' and ensure that the list is unmodified.(ª™¨¹8ö¢ñ´Š2J$a264b480-77a8-4257-8908-030ac42523ca
+Š
+java:S1128
+"BRemove this unused import 'org.springframework.web.ErrorResponse'.(Å¶âüÿÿÿÿ8…„ÿ¤‹2J$694e8857-6d2c-43cd-aaff-e2b66bb0234c
