@@ -37,7 +37,7 @@ public class CustomerRegDto {
     private int contact_no;
 
     @NotNull(message = "Customer Type Cannot Be Null")
-    private CustomerType customer_type;
+    private String customer_type;
 
     @NotNull(message = "Address is required")
     private String address;
@@ -47,7 +47,7 @@ public class CustomerRegDto {
     private String username;
 
     @NotNull(message = "Role is required")
-    private Role role;
+    private String role;
 
     @NotNull(message = "Password cannot be null")
     private String password;
@@ -58,5 +58,5 @@ public class CustomerRegDto {
     private Double balance;
 
     @NotNull(message = "Account Type cannot be null")
-    private AccountType accountType;
+    private String accountType;
 }

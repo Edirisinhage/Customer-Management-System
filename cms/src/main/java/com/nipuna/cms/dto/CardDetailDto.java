@@ -21,7 +21,7 @@ public class CardDetailDto {
     @Size(max = 10,min = 10,message = "customer id must be 10 digit")
     private String customer_id;
     @NotNull(message = "Card type required")
-    private CardType cardType;
+    private String cardType;
     @NotNull(message = "Required")
     private Double balance;
 }

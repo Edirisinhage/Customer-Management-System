@@ -1,11 +1,13 @@
 
-˜	java:S116"VRename this field "customer_id" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ëÒÄÀ8Ì²ƒ³Š2J$bbf867a1-4eb8-4e05-a1b5-86aa1ddbbabe
-™	java:S116"XRename this field "date_of_birth" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ôà¯k8Ì²ƒ³Š2J$66ac25fe-9532-4391-9784-518ddb0a26f9
-œ	java:S116%"URename this field "contact_no" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¹–å±úÿÿÿÿ8Ì²ƒ³Š2J$50e02ea3-5292-459a-b676-53e20b413ee7
-š	java:S116("XRename this field "customer_type" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÔžÕ­8Ì²ƒ³Š2J$6bef4aa7-7d8b-4459-a9a1-07f5b3ca0326
+˜	java:S116"VRename this field "customer_id" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ëÒÄÀ8Ì²ƒ³Š2J$16f364e1-dfb2-49c5-8d78-8c5dab1d4a8c
+™	java:S116"XRename this field "date_of_birth" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ôà¯k8Ì²ƒ³Š2J$9eb8d0a7-e96d-4962-a512-3b4c4dc2635b
+œ	java:S116%"URename this field "contact_no" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¹–å±úÿÿÿÿ8Ì²ƒ³Š2J$90cd68ae-1a36-4cf7-9a19-a0751ccf9bd5
+š	java:S116("XRename this field "customer_type" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÌÆÏÀ8Ì²ƒ³Š2J$9c29e1f9-ff5c-4b62-8019-8ac3db4b77e4
+O
+java:S1128"2Remove this unused import 'com.nipuna.cms.entity'.(¿–¶ó8Õâ°©‹2
 x
-java:S1128"0Remove this unused import 'jakarta.persistence'.(Î«Ô§úÿÿÿÿ8Ï²ƒ³Š2J$617f891d-8d2f-480f-8729-eee4bf7503ab
+java:S1128"0Remove this unused import 'jakarta.persistence'.(Î«Ô§úÿÿÿÿ8Ï²ƒ³Š2J$38231c3d-6f63-4164-9b2c-6eccd678cc46
 “
-java:S1128"PRemove this unused import 'org.springframework.validation.annotation.Validated'.(¸ÒÖƒ8Ï²ƒ³Š2J$6300f126-9514-46e7-a281-9e865f34d96c
+java:S1128"PRemove this unused import 'org.springframework.validation.annotation.Validated'.(¸ÒÖƒ8Ï²ƒ³Š2J$92e6f394-0efa-4a74-a074-e501c21feb2f
 s
-java:S1128"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8Ï²ƒ³Š2J$dbb7eeab-4b27-4684-a98e-5906b63847d2
+java:S1128"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8Ï²ƒ³Š2J$66e22429-7d93-41e5-b90c-05a10270160d

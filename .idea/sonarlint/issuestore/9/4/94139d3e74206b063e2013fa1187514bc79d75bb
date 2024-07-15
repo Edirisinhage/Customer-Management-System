@@ -1,6 +1,8 @@
 
-˜	java:S116"VRename this field "customer_id" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ëÒÄÀ8øÜ›³Š2J$86425aa4-0280-4066-90a5-32bc142bdaa7
+˜	java:S116"VRename this field "customer_id" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ëÒÄÀ8øÜ›³Š2J$ae74c7f6-7870-47dc-b7ce-4a7f77c2c96b
+]
+java:S1128";Remove this unused import 'com.nipuna.cms.entity.CardType'.(øõ÷‹üÿÿÿÿ8ÙŞÀ¨‹2
 ~
-java:S1128";Remove this unused import 'com.nipuna.cms.entity.Customer'.(·¤¾İ8œâ³Š2J$17eb2526-6583-42cf-bd66-729b7bc771c2
+java:S1128";Remove this unused import 'com.nipuna.cms.entity.Customer'.(·¤¾İ8œâ³Š2J$3adcb5af-a018-4431-a6ec-3b8b9f32a17e
 x
-java:S1128"0Remove this unused import 'jakarta.persistence'.(Î«Ô§úÿÿÿÿ8â³Š2J$24fdaa1d-a773-46e6-8dcd-16d00410e292
+java:S1128"0Remove this unused import 'jakarta.persistence'.(Î«Ô§úÿÿÿÿ8â³Š2J$52c10106-0b90-456b-b243-d05121e73ac9
